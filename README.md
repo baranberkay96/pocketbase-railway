@@ -1,5 +1,7 @@
 # Deploy and Host PocketBase with Railway
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/pocketbase-backend-auth-realtime-db-file?referralCode=20H68q)
+
 PocketBase is an open-source backend in a single Go binary: an embedded SQLite database with realtime subscriptions, user authentication (email, OAuth2, OTP), file storage and an admin dashboard, all behind one REST API. This template runs the official release on a Railway volume with the superuser created for you.
 
 ## About Hosting PocketBase
