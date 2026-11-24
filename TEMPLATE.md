@@ -31,7 +31,7 @@ Variables: `PB_ADMIN_EMAIL` (admin@example.com), `PB_ADMIN_PASSWORD` (secret 24)
 
 | Service | Idle RAM | Typical RAM | CPU |
 |---|---|---|---|
-| PocketBase | ≈20 MB (measured) | 50–300 MB (more for thumbnails of large images) | ≈0 idle |
+| PocketBase | ≈16–22 MB (measured) | 50–300 MB (more for thumbnails of large images) | ≈0 idle |
 
 Estimated cost: $0.5–2/month + volume ($0.15/GB-month). Minimum plan: Trial.
 

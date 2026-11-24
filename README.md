@@ -61,7 +61,7 @@ PocketBase is one process with SQLite: run one replica and scale it vertically. 
 
 **Resources**
 
-Measured on Railway: about 20 MB RAM idle, near 0 vCPU. Trial plan is enough for small apps; cost is roughly $0.5–2/month plus the volume. Image thumbnails of very large pictures can use a lot of RAM (PocketBase limits the source size).
+Measured on Railway: about 20 MB RAM idle (16–22 MB), near 0 vCPU. Trial plan is enough for small apps; cost is roughly $0.5–2/month plus the volume. Image thumbnails of very large pictures can use a lot of RAM (PocketBase limits the source size).
 
 **Security**
 
