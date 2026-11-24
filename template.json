@@ -1,0 +1,79 @@
+{
+ "name": "PocketBase Backend (Auth, Realtime DB, Files)",
+ "idSeed": "PocketBase Backend (Auth, Realtime DB, Files) / 2026-11-24",
+ "description": "Open-source backend in one file: SQLite DB, auth, files and realtime API.",
+ "category": "Other",
+ "tags": [
+  "pocketbase",
+  "backend",
+  "baas",
+  "sqlite",
+  "auth",
+  "realtime",
+  "firebase-alternative",
+  "supabase-alternative"
+ ],
+ "image": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pocketbase.svg",
+ "upstream": {
+  "repo": "pocketbase/pocketbase",
+  "version": "v0.40.6",
+  "zip_sha256": "0e1f609158ed945f809f8a02ae012aa0427129c66ebb63c1aee76f2c0309373f",
+  "base": "alpine:3.24.4@sha256:f59abe656b692d901e184be3445e084786602108599d2a51d229c0f5a48c71bf",
+  "checked": "2026-11-24"
+ },
+ "services": {
+  "PocketBase": {
+   "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pocketbase.svg",
+   "source": {
+    "repo": "baranberkay96/pocketbase-railway",
+    "rootDirectory": "/services/pocketbase"
+   },
+   "startCommand": null,
+   "preDeployCommand": null,
+   "healthcheckPath": "/api/health",
+   "healthcheckTimeout": 300,
+   "restartPolicyType": "ALWAYS",
+   "numReplicas": 1,
+   "cronSchedule": null,
+   "publicDomain": true,
+   "targetPort": 8080,
+   "tcpProxy": null,
+   "volume": {
+    "mountPath": "/pb_data"
+   },
+   "variables": {
+    "PB_ADMIN_EMAIL": {
+     "defaultValue": "admin@example.com",
+     "description": "Superuser login for the dashboard at /_/. Use your own email.",
+     "required": false
+    },
+    "PB_ADMIN_PASSWORD": {
+     "defaultValue": "${{secret(24, \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\")}}",
+     "description": "Superuser password (10-71 chars), re-applied at every start: change it here, not in the UI.",
+     "required": false
+    },
+    "PB_ENCRYPTION_KEY": {
+     "defaultValue": "${{secret(32, \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\")}}",
+     "description": "32 characters that encrypt stored SMTP/S3 secrets. Never change it after the first start.",
+     "required": false
+    },
+    "PB_APP_NAME": {
+     "defaultValue": "PocketBase",
+     "description": "Application name used in emails, set once on the first start (later: Settings).",
+     "required": false
+    },
+    "PORT": {
+     "defaultValue": "8080",
+     "description": "Port PocketBase listens on; the public domain points here.",
+     "required": false
+    },
+    "RAILWAY_DEPLOYMENT_DRAINING_SECONDS": {
+     "defaultValue": "10",
+     "description": "Seconds PocketBase gets to close the SQLite database cleanly on redeploy.",
+     "required": false
+    }
+   }
+  }
+ },
+ "buckets": []
+}
